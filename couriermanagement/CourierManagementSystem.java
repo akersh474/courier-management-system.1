@@ -17,7 +17,7 @@ public class CourierManagementSystem extends JFrame {
     static final String DB_USER = "root";
 
     // CHANGE THIS TO YOUR MYSQL PASSWORD
-    static final String DB_PASSWORD = "root@123";
+    static final String DB_PASSWORD = "@Akersh474@";
 
 
     // =========================================================
