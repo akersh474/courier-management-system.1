@@ -1,13 +1,6 @@
-
-# Java compiled files
 *.class
 bin/
 out/
-
-# VS Code local settings
-.vscode/
-
-# Secrets and local environment files
 .env
-.env.*
-!.env.example
+
+config.properties
