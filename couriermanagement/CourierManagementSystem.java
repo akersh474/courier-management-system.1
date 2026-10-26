@@ -7,22 +7,13 @@ import java.util.UUID;
 
 public class CourierManagementSystem extends JFrame {
 
-    // =========================================================
-    // DATABASE DETAILS
-    // =========================================================
-
   private static final String DB_URL =
     "jdbc:mysql://localhost:3306/courier_management?useSSL=false&serverTimezone=UTC";
    
     static final String DB_USER = "root";
 
-    // CHANGE THIS TO YOUR MYSQL PASSWORD
     static final String DB_PASSWORD = "@root@";
 
-
-    // =========================================================
-    // MAIN WINDOW
-    // =========================================================
 
     JFrame frame;
 
@@ -30,10 +21,6 @@ public class CourierManagementSystem extends JFrame {
         showLogin();
     }
 
-
-    // =========================================================
-    // DATABASE CONNECTION
-    // =========================================================
 
     public static Connection getConnection() throws SQLException {
 
@@ -43,11 +30,6 @@ public class CourierManagementSystem extends JFrame {
                 DB_PASSWORD
         );
     }
-
-
-    // =========================================================
-    // LOGIN SCREEN
-    // =========================================================
 
     public void showLogin() {
 
@@ -133,11 +115,6 @@ public class CourierManagementSystem extends JFrame {
         frame.setVisible(true);
     }
 
-
-    // =========================================================
-    // LOGIN DATABASE CHECK
-    // =========================================================
-
     public boolean checkLogin(
             String username,
             String password) {
@@ -167,10 +144,6 @@ public class CourierManagementSystem extends JFrame {
         }
     }
 
-
-    // =========================================================
-    // DASHBOARD
-    // =========================================================
 
     public void showDashboard() {
 
@@ -258,9 +231,6 @@ public class CourierManagementSystem extends JFrame {
 
         frame.add(mainPanel);
 
-
-        // BUTTON ACTIONS
-
         bookButton.addActionListener(e ->
                 showBookingScreen());
 
@@ -291,14 +261,9 @@ public class CourierManagementSystem extends JFrame {
         frame.setVisible(true);
     }
 
-
-    // =========================================================
-    // PARCEL BOOKING SCREEN
-    // =========================================================
-
     public void showBookingScreen() {
 
-        JFrame bookingFrame =
+        JFrame bookingFrame =====
                 new JFrame("Parcel Booking");
 
         bookingFrame.setSize(600, 600);
@@ -459,9 +424,6 @@ public class CourierManagementSystem extends JFrame {
 
         bookingFrame.add(panel);
 
-
-        // SAVE
-
         saveButton.addActionListener(e -> {
 
             try {
@@ -590,9 +552,6 @@ public class CourierManagementSystem extends JFrame {
             }
         });
 
-
-        // CLEAR
-
         clearButton.addActionListener(e -> {
 
             senderField.setText("");
@@ -618,11 +577,6 @@ public class CourierManagementSystem extends JFrame {
         bookingFrame.setVisible(true);
     }
 
-
-    // =========================================================
-    // ADD FORM ROW
-    // =========================================================
-
     private void addRow(
             JPanel panel,
             GridBagConstraints gbc,
@@ -647,10 +601,6 @@ public class CourierManagementSystem extends JFrame {
     }
 
 
-    // =========================================================
-    // GENERATE TRACKING ID
-    // =========================================================
-
     private String generateTrackingID() {
 
         return "CR"
@@ -659,11 +609,6 @@ public class CourierManagementSystem extends JFrame {
                 .substring(0, 8)
                 .toUpperCase();
     }
-
-
-    // =========================================================
-    // TRACKING SCREEN
-    // =========================================================
 
     public void showTrackingScreen() {
 
@@ -897,11 +842,6 @@ public class CourierManagementSystem extends JFrame {
         trackingFrame.setVisible(true);
     }
 
-
-    // =========================================================
-    // READ ONLY FIELD
-    // =========================================================
-
     private JTextField createReadOnlyField() {
 
         JTextField field =
@@ -911,7 +851,7 @@ public class CourierManagementSystem extends JFrame {
 
         return field;
     }
-    // Save each parcel status change in the history table
+   
     private void saveParcelHistory(
         String trackingId, String status, String remarks) {
 
@@ -934,10 +874,6 @@ public class CourierManagementSystem extends JFrame {
          );
          }
    }
-
-    // =========================================================
-    // UPDATE STATUS
-    // =========================================================
 
     public void showUpdateStatus() {
 
@@ -1076,8 +1012,6 @@ public class CourierManagementSystem extends JFrame {
         updateFrame.setVisible(true);
     }
 
-    //PARCEL HISTORY
-
   public void viewParcelHistory() {
     
         String trackingId = JOptionPane.showInputDialog(
@@ -1136,7 +1070,6 @@ public class CourierManagementSystem extends JFrame {
     }
 }
 
-    //ALL RECORDS
     public void showAllRecords() {
  
         JFrame recordsFrame =
@@ -1181,11 +1114,7 @@ public class CourierManagementSystem extends JFrame {
         recordsFrame.setVisible(true);
     }
 
-
-    // =========================================================
-    // LOAD RECORDS
-    // =========================================================
-
+    
     private void loadRecords(
             DefaultTableModel model) {
 
@@ -1257,11 +1186,6 @@ public class CourierManagementSystem extends JFrame {
             );
         }
     }
-
-
-    // =========================================================
-    // CUSTOMERS
-    // =========================================================
 
     public void showCustomers() {
 
@@ -1351,11 +1275,6 @@ public class CourierManagementSystem extends JFrame {
 
         customerFrame.setVisible(true);
     }
-
-
-    // =========================================================
-    // REPORTS
-    // =========================================================
 
     public void showReports() {
 
@@ -1455,12 +1374,6 @@ public class CourierManagementSystem extends JFrame {
 
         reportFrame.setVisible(true);
     }
-
-
-    // =========================================================
-    // REPORT DATABASE QUERY
-    // =========================================================
-
     private void loadReport(
             JLabel total,
             JLabel booked,
@@ -1552,10 +1465,6 @@ public class CourierManagementSystem extends JFrame {
         return "0";
     }
 
-
-    // =========================================================
-    // MAIN METHOD
-    // =========================================================
 
     public static void main(String[] args) {
 
